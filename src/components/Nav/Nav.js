@@ -11,7 +11,7 @@ const Nav = () => {
   return (
     <nav className='nav flex'>
       {navItems.map((el) => (
-        <Link className='mr-10' key={el._id} to={el.url} text={el.name} />
+        <Link className='mr-16' key={el._id} to={el.url} text={el.name} />
       ))}
     </nav>
   );
