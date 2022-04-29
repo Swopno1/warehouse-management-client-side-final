@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from '../design/Link/Link';
 
 const navItems = [
   { _id: 1, name: 'Home', url: '/home' },
@@ -8,14 +9,10 @@ const navItems = [
 
 const Nav = () => {
   return (
-    <nav className='nav'>
-      <ul className='flex'>
-        {navItems.map((el) => (
-          <li className='mr-16' key={el._id}>
-            {el.name}
-          </li>
-        ))}
-      </ul>
+    <nav className='nav flex'>
+      {navItems.map((el) => (
+        <Link className='mr-10' key={el._id} to={el.url} text={el.name} />
+      ))}
     </nav>
   );
 };
