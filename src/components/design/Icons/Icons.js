@@ -7,7 +7,7 @@ import {
 const Cart = () => {
   return (
     <>
-      <ShoppingCartIcon className='w-5 h-5 ml-10 text-black hover:text-dark-gray hover:cursor-pointer' />
+      <ShoppingCartIcon className='w-5 h-5 ml-10 text-dark hover:text-dark-gray hover:cursor-pointer' />
     </>
   );
 };
@@ -15,7 +15,7 @@ const Cart = () => {
 const User = () => {
   return (
     <>
-      <UserIcon className='w-5 h-5 ml-10 text-black hover:text-dark-gray hover:cursor-pointer' />
+      <UserIcon className='w-5 h-5 ml-10 text-dark hover:text-dark-gray hover:cursor-pointer' />
     </>
   );
 };
@@ -23,7 +23,7 @@ const User = () => {
 const Search = () => {
   return (
     <>
-      <SearchIcon className='w-5 h-5 ml-10 text-black hover:text-dark-gray hover:cursor-pointer' />
+      <SearchIcon className='w-5 h-5 ml-10 text-dark hover:text-dark-gray hover:cursor-pointer' />
     </>
   );
 };
