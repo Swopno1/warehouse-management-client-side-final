@@ -1,5 +1,5 @@
 import React from 'react';
-import Link from '../design/Link/Link';
+import { Link } from '../design/Link/Link';
 
 const navItems = [
   { _id: 1, name: 'Home', url: '/home' },
