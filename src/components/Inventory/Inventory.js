@@ -1,11 +1,27 @@
 import React from 'react';
-import { H1, H3 } from '../design/Title/Title';
+import { H1 } from '../design/Title/Title';
+
+const inventories = [
+  {
+    _id: 2,
+    name: 'Bread',
+    img: '',
+    description: '',
+    price: '',
+    quantity: '',
+    supplier: 'Amir',
+  },
+];
 
 const Inventory = () => {
   return (
     <section className='container mx-auto'>
       <H1 className='mt-16' text='Inventory' />
-      <H3 className='' text='Hello' />
+      {/* <div>
+        {inventories.map((el) => (
+          <Card item={el} />
+        ))}
+      </div> */}
     </section>
   );
 };
