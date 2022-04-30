@@ -20,7 +20,7 @@ const Link = ({ to, text, className }) => {
 const Link2 = ({ to, text, className }) => {
   return (
     <NavLink
-      className={`text-dark-gray text-base capitalize hover:text-dark ${className}`}
+      className={`${className} text-dark-gray text-base uppercase hover:text-dark`}
       style={({ isActive }) => {
         return {
           color: isActive ? '#323232' : '',
