@@ -1,7 +1,7 @@
-import React from 'react';
+import React from "react";
 
 const PageNotFount = () => {
-  return <div>Page Not Found</div>;
+  return <div className="container mx-auto">Page Not Found</div>;
 };
 
 export default PageNotFount;

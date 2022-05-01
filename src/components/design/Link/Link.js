@@ -1,5 +1,5 @@
-import React from 'react';
-import { NavLink } from 'react-router-dom';
+import React from "react";
+import { NavLink } from "react-router-dom";
 
 const Link = ({ to, text, className }) => {
   return (
@@ -7,7 +7,7 @@ const Link = ({ to, text, className }) => {
       className={`font-medium text-base text-dark uppercase hover:text-dark-gray ${className}`}
       style={({ isActive }) => {
         return {
-          'border-bottom': isActive ? '2px solid #000000' : 'none',
+          borderBottom: isActive ? "2px solid #000000" : "none",
         };
       }}
       to={to}
@@ -23,7 +23,7 @@ const Link2 = ({ to, text, className }) => {
       className={`${className} text-dark-gray text-base uppercase hover:text-dark`}
       style={({ isActive }) => {
         return {
-          color: isActive ? '#323232' : '',
+          color: isActive ? "#323232" : "",
         };
       }}
       to={to}
@@ -39,7 +39,7 @@ const Link3 = ({ to, text, className }) => {
       className={`text-dark text-base hover:text-dark-gray ${className}`}
       style={({ isActive }) => {
         return {
-          color: isActive ? '#707070' : '',
+          color: isActive ? "#707070" : "",
         };
       }}
       to={to}
@@ -55,7 +55,7 @@ const Link4 = ({ to, text, className }) => {
       className={`text-accent text-xl font-bold hover:text-dark ${className}`}
       style={({ isActive }) => {
         return {
-          color: isActive ? '#323232' : '',
+          color: isActive ? "#323232" : "",
         };
       }}
       to={to}
