@@ -1,14 +1,60 @@
 import React from "react";
 import Card from "../design/Card/Card";
+import { Link4 } from "../design/Link/Link";
 import { H1 } from "../design/Title/Title";
 
 const inventories = [
   {
+    _id: 1,
+    name: "Bread",
+    img: "https://i.ibb.co/RvhVcKV/image14.jpg",
+    description: "",
+    price: "300",
+    quantity: "",
+    supplier: "Amir",
+  },
+  {
     _id: 2,
     name: "Bread",
-    img: "",
+    img: "https://i.ibb.co/RvhVcKV/image14.jpg",
     description: "",
-    price: "",
+    price: "200",
+    quantity: "",
+    supplier: "Amir",
+  },
+  {
+    _id: 3,
+    name: "Bread",
+    img: "https://i.ibb.co/RvhVcKV/image14.jpg",
+    description: "",
+    price: "300",
+    quantity: "",
+    supplier: "Amir",
+  },
+  {
+    _id: 4,
+    name: "Bread",
+    img: "https://i.ibb.co/RvhVcKV/image14.jpg",
+    description: "",
+    price: "300",
+    quantity: "",
+    supplier: "Amir",
+  },
+  {
+    _id: 5,
+    name: "Bread",
+    img: "https://i.ibb.co/RvhVcKV/image14.jpg",
+    description: "",
+    price: "300",
+    quantity: "",
+    supplier: "Amir",
+  },
+  {
+    _id: 6,
+    name: "Bread",
+    img: "https://i.ibb.co/RvhVcKV/image14.jpg",
+    description: "",
+    price: "300",
     quantity: "",
     supplier: "Amir",
   },
@@ -17,8 +63,12 @@ const inventories = [
 const Inventory = () => {
   return (
     <section className="container mx-auto">
-      <H1 className="mt-16 text-center" text="Inventory" />
-      <div>
+      <div className="section-header flex justify-between items-center">
+        <H1 className="mt-16" text="Inventory" />
+        <Link4 className="mt-16" to="/inventory" text="View all" />
+      </div>
+
+      <div className="w-full my-4 grid grid-cols-3 gap-20">
         {inventories.map((el) => (
           <Card key={el._id} item={el} />
         ))}
