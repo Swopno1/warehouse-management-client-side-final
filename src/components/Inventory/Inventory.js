@@ -3,7 +3,6 @@ import Card from "../design/Card/Card";
 import { Link4 } from "../design/Link/Link";
 import { H1 } from "../design/Title/Title";
 
-// const inventories = [
 //   {
 //     _id: 1,
 //     name: "Bread",
@@ -12,53 +11,7 @@ import { H1 } from "../design/Title/Title";
 //     price: "300",
 //     quantity: "",
 //     supplier: "Amir",
-//   },
-//   {
-//     _id: 2,
-//     name: "Bread",
-//     img: "https://i.ibb.co/RvhVcKV/image14.jpg",
-//     description: "",
-//     price: "200",
-//     quantity: "",
-//     supplier: "Amir",
-//   },
-//   {
-//     _id: 3,
-//     name: "Bread",
-//     img: "https://i.ibb.co/RvhVcKV/image14.jpg",
-//     description: "",
-//     price: "300",
-//     quantity: "",
-//     supplier: "Amir",
-//   },
-//   {
-//     _id: 4,
-//     name: "Bread",
-//     img: "https://i.ibb.co/RvhVcKV/image14.jpg",
-//     description: "",
-//     price: "300",
-//     quantity: "",
-//     supplier: "Amir",
-//   },
-//   {
-//     _id: 5,
-//     name: "Bread",
-//     img: "https://i.ibb.co/RvhVcKV/image14.jpg",
-//     description: "",
-//     price: "300",
-//     quantity: "",
-//     supplier: "Amir",
-//   },
-//   {
-//     _id: 6,
-//     name: "Bread",
-//     img: "https://i.ibb.co/RvhVcKV/image14.jpg",
-//     description: "",
-//     price: "300",
-//     quantity: "",
-//     supplier: "Amir",
-//   },
-// ];
+//   }
 
 const Inventory = () => {
   const [inventories, setInventories] = useState([]);

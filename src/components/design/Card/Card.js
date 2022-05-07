@@ -8,7 +8,14 @@ const Card = ({ item }) => {
     <div className="w-[380px] h-[472px] rounded">
       <img className="w-full h-[380px] mb-6 rounded" src={img} alt={name} />
       <H3 text={name} className=" mb-4" />
-      <p className="text-ascend text-accent">${price}</p>
+      <div className="">
+        <p>Supplier: {supplier}</p>
+        <p>{description}</p>
+      </div>
+      <div className="flex justify-between items-center">
+        <p className="text-accent">${price}</p>
+        <p className="text-black">{quantity.slice(0, 30)}</p>
+      </div>
     </div>
   );
 };
