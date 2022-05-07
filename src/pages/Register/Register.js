@@ -1,17 +1,18 @@
 import React, { useState } from "react";
-import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
+import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
 import auth from "../../firebase.init";
 
-const Signin = () => {
+const Register = () => {
+  const [userName, setuserName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setpassword] = useState("");
 
-  const [signInWithEmailAndPassword, user, loading, error] =
-    useSignInWithEmailAndPassword(auth);
+  const [createUserWithEmailAndPassword, user, loading, error] =
+    useCreateUserWithEmailAndPassword(auth);
 
   const handleSignIn = (e) => {
     e.preventDefault();
-    signInWithEmailAndPassword(email, password);
+    createUserWithEmailAndPassword(email, password);
     console.log(user);
   };
 
@@ -38,6 +39,14 @@ const Signin = () => {
       <h2>Please Sign In</h2>
       <form onSubmit={handleSignIn} className="w-1/2 mx-auto">
         <input
+          onBlur={(e) => setuserName(e.target.value)}
+          className="w-full border rounded my-1 p-1"
+          type="text"
+          name="name"
+          id="name"
+          placeholder="Enter Your Name"
+        />
+        <input
           onBlur={(e) => setEmail(e.target.value)}
           className="w-full border rounded my-1 p-1"
           type="text"
@@ -63,4 +72,4 @@ const Signin = () => {
   );
 };
 
-export default Signin;
+export default Register;
