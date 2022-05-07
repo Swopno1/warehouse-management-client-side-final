@@ -1,6 +1,6 @@
-import React from 'react';
-import Banner from '../../components/Banner/Banner';
-import Inventory from '../../components/Inventory/Inventory';
+import React from "react";
+import Banner from "../../components/Banner/Banner";
+import Inventory from "../../components/Inventories/Inventories";
 
 const Home = () => {
   return (
