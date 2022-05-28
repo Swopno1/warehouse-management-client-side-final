@@ -7,7 +7,10 @@ const Card = ({ item }) => {
 
   return (
     <Link to={`/inventory/${_id}`} className="w-[380px] h-[472px] rounded">
-      <img className="w-full h-[380px] mb-6 rounded" src={img} alt={name} />
+      <div className="relative overflow-hidden bg-no-repeat bg-cover max-w-xs">
+        <img className="max-w-xs h-[380px] mb-6 rounded" src={img} alt={name} />
+      </div>
+
       <H3 text={name} className=" mb-4" />
       <div className="">
         <p>Supplier: {supplier}</p>

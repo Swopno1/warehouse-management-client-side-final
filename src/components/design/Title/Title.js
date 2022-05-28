@@ -1,37 +1,39 @@
-const H1 = ({ text, className }) => {
+const H1 = ({ className, children }) => {
   return (
-    <h1 className={`font-medium text-[33px] text-dark ${className}`}>{text}</h1>
+    <h1 className={`font-medium text-[33px] text-dark ${className}`}>
+      {children}
+    </h1>
   );
 };
 
-const H2 = ({ text, className }) => {
+const H2 = ({ children, className }) => {
   return (
     <h2 className={`font-normal text-[26px] leading-9 text-dark ${className}`}>
-      {text}
+      {children}
     </h2>
   );
 };
 
-const H3 = ({ text, className }) => {
+const H3 = ({ children, className }) => {
   return (
-    <h3 className={`font-normal text-xl text-dark ${className}`}>{text}</h3>
+    <h3 className={`font-normal text-xl text-dark ${className}`}>{children}</h3>
   );
 };
 
-const H4 = ({ text, className }) => {
+const H4 = ({ children, className }) => {
   return (
     <h4 className={`font-medium text-xl leading-5 text-dark ${className}`}>
-      {text}
+      {children}
     </h4>
   );
 };
 
-const H5 = ({ text, className }) => {
+const H5 = ({ children, className }) => {
   return (
     <h5
       className={`font-normal text-base leading-7 text-dark py-[10px] ${className}`}
     >
-      {text}
+      {children}
     </h5>
   );
 };

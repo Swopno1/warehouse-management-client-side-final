@@ -1,9 +1,10 @@
-import React from 'react';
+import React from "react";
+import { H1 } from "../../components/design/Title/Title";
 
 const Blog = () => {
   return (
     <div>
-      <h1>Blog Page</h1>
+      <H1>Blogs</H1>
     </div>
   );
 };
