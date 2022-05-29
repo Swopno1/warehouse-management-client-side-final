@@ -14,7 +14,7 @@ const AddNew = () => {
     e.preventDefault();
     const newItem = { name, img, description, price, quantity, supplier };
 
-    fetch(`http://localhost:4000/inventory`, {
+    fetch(`https://inventoryish.herokuapp.com/inventory`, {
       method: "POST",
       headers: {
         "content-type": "application/json",

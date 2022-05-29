@@ -7,7 +7,7 @@ const ManageInventories = () => {
   const [inventory, setInventory] = useInventory();
 
   const deleteItem = (id) => {
-    fetch(`http://localhost:4000/inventory/${id}`, {
+    fetch(`https://inventoryish.herokuapp.com/inventory/${id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())

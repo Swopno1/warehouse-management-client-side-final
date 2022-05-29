@@ -3,10 +3,10 @@ import { useEffect, useState } from "react";
 const useInventory = (id) => {
   const [inventory, setInventory] = useState([]);
 
-  let uri = `http://localhost:4000/inventory`;
+  let uri = `https://inventoryish.herokuapp.com/inventory`;
 
   if (id) {
-    uri = `http://localhost:4000/inventory/${id}`;
+    uri = `https://inventoryish.herokuapp.com/inventory/${id}`;
   }
 
   useEffect(() => {

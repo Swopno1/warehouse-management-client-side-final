@@ -19,7 +19,7 @@ const Inventory = () => {
   };
 
   const setNewStock = (newInventory) => {
-    fetch(`http://localhost:4000/inventory/${params.id}`, {
+    fetch(`https://inventoryish.herokuapp.com/inventory/${params.id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",
