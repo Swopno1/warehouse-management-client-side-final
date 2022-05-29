@@ -3,10 +3,11 @@ import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
-import Inventories from "./components/Inventories/Inventories";
+import Inventories from "./pages/Home/Inventories";
 import Inventory from "./components/Inventory/Inventory";
 import Blog from "./pages/Blog/Blog";
 import Home from "./pages/Home/Home";
+import ManageInventories from "./pages/ManageInventories/ManageInventories";
 import PageNotFount from "./pages/PageNotFound/PageNotFount";
 import Register from "./pages/Register/Register";
 import RequireAuth from "./pages/Signin/RequireAuth";
@@ -26,6 +27,14 @@ function App() {
           element={
             <RequireAuth>
               <Inventory></Inventory>
+            </RequireAuth>
+          }
+        />
+        <Route
+          path="/manageinventory"
+          element={
+            <RequireAuth>
+              <ManageInventories></ManageInventories>
             </RequireAuth>
           }
         />

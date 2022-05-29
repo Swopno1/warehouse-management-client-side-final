@@ -1,8 +1,8 @@
 import React from "react";
 import useInventory from "../../hooks/useInventory";
-import Card from "../design/Card/Card";
-import { Link4 } from "../design/Link/Link";
-import { H1 } from "../design/Title/Title";
+import Card from "../../components/design/Card/Card";
+import { Link4 } from "../../components/design/Link/Link";
+import { H1 } from "../../components/design/Title/Title";
 
 const Inventories = () => {
   const [inventory] = useInventory();
@@ -12,7 +12,11 @@ const Inventories = () => {
     <section className="container mx-auto">
       <div className="section-header flex justify-between items-center">
         <H1 className="mt-16">Inventory</H1>
-        <Link4 className="mt-16" to="/inventory" text="View all" />
+        <Link4
+          className="mt-16"
+          to="/manageinventory"
+          text="Manage Inventories"
+        />
       </div>
 
       <div className="w-full my-4 grid grid-cols-3 gap-20">

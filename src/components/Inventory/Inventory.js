@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import useInventory from "../../hooks/useInventory";
+import { Link } from "../design/Link/Link";
 import { H1 } from "../design/Title/Title";
 
 const Inventory = () => {
@@ -30,8 +31,6 @@ const Inventory = () => {
 
   const updateStock = (e) => {
     e.preventDefault();
-
-    const oldStock = parseInt(inventory.quantity);
 
     inventory._id && delete inventory._id;
 
@@ -76,6 +75,9 @@ const Inventory = () => {
           />
           <input className="btn" type="submit" value="Update Stock" />
         </form>
+      </div>
+      <div className="text-center mt-3 mb-12">
+        <Link to="/manageinventory" text="Manage Inventories" className="" />
       </div>
     </div>
   );
