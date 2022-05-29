@@ -1,3 +1,5 @@
+import React from "react";
+
 const H1 = ({ className, children }) => {
   return (
     <h1 className={`font-medium text-[33px] text-dark ${className}`}>

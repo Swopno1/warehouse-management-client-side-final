@@ -1,3 +1,4 @@
+import React from "react";
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import Footer from "./components/Footer/Footer";
@@ -8,6 +9,7 @@ import Blog from "./pages/Blog/Blog";
 import Home from "./pages/Home/Home";
 import PageNotFount from "./pages/PageNotFound/PageNotFount";
 import Register from "./pages/Register/Register";
+import RequireAuth from "./pages/Signin/RequireAuth";
 import Signin from "./pages/Signin/Signin";
 
 function App() {
@@ -15,10 +17,18 @@ function App() {
     <div className="App font-dmsans">
       <Header />
       <Routes>
+        <Route path="/" element={<Home></Home>} />
         <Route path="/home" element={<Home></Home>} />
         <Route path="/blog" element={<Blog></Blog>} />
         <Route path="/inventory" element={<Inventories></Inventories>} />
-        <Route path="/inventory/:id" element={<Inventory></Inventory>} />
+        <Route
+          path="/inventory/:id"
+          element={
+            <RequireAuth>
+              <Inventory></Inventory>
+            </RequireAuth>
+          }
+        />
         <Route path="/signin" element={<Signin></Signin>} />
         <Route path="/register" element={<Register></Register>} />
 

@@ -1,5 +1,9 @@
 import React, { useState } from "react";
-import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
+import {
+  useCreateUserWithEmailAndPassword,
+  useUpdateProfile,
+} from "react-firebase-hooks/auth";
+import { Navigate, useLocation, useNavigate } from "react-router-dom";
 import auth from "../../firebase.init";
 
 const Register = () => {
@@ -9,35 +13,36 @@ const Register = () => {
 
   const [createUserWithEmailAndPassword, user, loading, error] =
     useCreateUserWithEmailAndPassword(auth);
+  const [updateProfile, updating, updatingError] = useUpdateProfile(auth);
 
-  const handleSignIn = (e) => {
+  const location = useLocation();
+  const navigate = useNavigate();
+  const from = location?.state?.from?.pathname || "/";
+
+  const handleRegister = async (e) => {
     e.preventDefault();
-    createUserWithEmailAndPassword(email, password);
-    console.log(user);
+    await createUserWithEmailAndPassword(email, password);
+    await updateProfile({ displayName: userName });
   };
 
-  if (error) {
+  if (error || updatingError) {
     return (
       <div>
         <p>Error: {error.message}</p>
       </div>
     );
   }
-  if (loading) {
+  if (loading || updating) {
     return <p>Loading...</p>;
   }
   if (user) {
-    return (
-      <div>
-        <p>Registered User: {user.email}</p>
-      </div>
-    );
+    navigate(from, { replace: true });
   }
 
   return (
     <div className="container mx-auto">
       <h2>Please Sign In</h2>
-      <form onSubmit={handleSignIn} className="w-1/2 mx-auto">
+      <form onSubmit={handleRegister} className="w-1/2 mx-auto">
         <input
           onBlur={(e) => setuserName(e.target.value)}
           className="w-full border rounded my-1 p-1"
@@ -65,7 +70,7 @@ const Register = () => {
         <input
           className="px-3 py-1 border shadow rounded bg-slate-900 text-white w-full"
           type="submit"
-          value="Sign In"
+          value="Register"
         />
       </form>
     </div>

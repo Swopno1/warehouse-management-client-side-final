@@ -1,30 +1,21 @@
-<<<<<<< HEAD
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
-const useInventory = () => {
-  const [inventories, setInventories] = useState([]);
-
-  useEffect(() => {
-    fetch("http://localhost:4000/inventory")
-      .then((res) => res.json())
-      .then((data) => setInventories(data));
-  }, []);
-
-  return inventories;
-=======
-import { useEffect, useState } from 'react';
-
-const useInventory = () => {
+const useInventory = (id) => {
   const [inventory, setInventory] = useState([]);
 
+  let uri = `http://localhost:4000/inventory`;
+
+  if (id) {
+    uri = `http://localhost:4000/inventory/${id}`;
+  }
+
   useEffect(() => {
-    fetch('http://localhost:4000/inventory')
+    fetch(uri)
       .then((res) => res.json())
       .then((data) => setInventory(data));
   }, []);
 
   return [inventory, setInventory];
->>>>>>> 42e32349108b97ba3de9172475e559b2e4c00296
 };
 
 export default useInventory;

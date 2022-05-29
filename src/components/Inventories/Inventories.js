@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import useInventory from "../../hooks/useInventory";
 import Card from "../design/Card/Card";
 import { Link4 } from "../design/Link/Link";
 import { H1 } from "../design/Title/Title";
 
 const Inventories = () => {
-  const [inventory, setInventory] = useInventory();
+  const [inventory] = useInventory();
 
   return (
     <section className="container mx-auto">

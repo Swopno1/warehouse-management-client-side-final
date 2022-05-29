@@ -1,36 +1,40 @@
 import React, { useState } from "react";
-import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
+import {
+  useSignInWithEmailAndPassword,
+  useSignInWithGoogle,
+} from "react-firebase-hooks/auth";
+import { useLocation, useNavigate } from "react-router-dom";
 import auth from "../../firebase.init";
 
 const Signin = () => {
   const [email, setEmail] = useState("");
   const [password, setpassword] = useState("");
 
+  const location = useLocation();
+  const navigate = useNavigate();
+  const from = location?.state?.from?.pathname || "/";
+
   const [signInWithEmailAndPassword, user, loading, error] =
     useSignInWithEmailAndPassword(auth);
+  const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
 
   const handleSignIn = (e) => {
     e.preventDefault();
     signInWithEmailAndPassword(email, password);
-    console.log(user);
   };
 
-  if (error) {
+  if (error || gError) {
     return (
       <div>
         <p>Error: {error.message}</p>
       </div>
     );
   }
-  if (loading) {
+  if (loading || gLoading) {
     return <p>Loading...</p>;
   }
-  if (user) {
-    return (
-      <div>
-        <p>Registered User: {user.email}</p>
-      </div>
-    );
+  if (user || gUser) {
+    navigate(from, { replace: true });
   }
 
   return (
@@ -57,6 +61,15 @@ const Signin = () => {
           className="px-3 py-1 border shadow rounded bg-slate-900 text-white w-full"
           type="submit"
           value="Sign In"
+        />
+      </form>
+      <div className="divider">OR</div>
+      <form className="w-1/2 mx-auto">
+        <input
+          className="px-3 py-1 border shadow rounded bg-slate-900 text-white w-full"
+          type="submit"
+          value="Sign In With Google"
+          onClick={() => signInWithGoogle()}
         />
       </form>
     </div>
