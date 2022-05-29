@@ -6,6 +6,7 @@ import { H1 } from "../design/Title/Title";
 
 const Inventories = () => {
   const [inventory] = useInventory();
+  const inventories = inventory.slice(0, 6);
 
   return (
     <section className="container mx-auto">
@@ -15,7 +16,7 @@ const Inventories = () => {
       </div>
 
       <div className="w-full my-4 grid grid-cols-3 gap-20">
-        {inventory.map((el) => (
+        {inventories.map((el) => (
           <Card key={el._id} item={el} />
         ))}
       </div>

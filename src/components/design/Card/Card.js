@@ -18,7 +18,7 @@ const Card = ({ item }) => {
       </div>
       <div className="flex justify-between items-center">
         <p className="text-accent">${price}</p>
-        <p className="text-black">{quantity.slice(0, 30)}</p>
+        <p className="text-black">{quantity}</p>
       </div>
     </Link>
   );
