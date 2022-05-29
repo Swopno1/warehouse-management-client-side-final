@@ -4,7 +4,7 @@ import { Link } from "../design/Link/Link";
 const navItems = [
   { _id: 1, name: "Home", url: "/home" },
   { _id: 2, name: "Inventory", url: "/inventory" },
-  { _id: 3, name: "Add", url: "/add" },
+  { _id: 3, name: "Blogs", url: "/blogs" },
 ];
 
 const Nav = () => {

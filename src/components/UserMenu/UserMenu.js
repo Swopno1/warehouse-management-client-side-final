@@ -16,8 +16,6 @@ const UserMenu = () => {
   const [user] = useAuthState(auth);
 
   const handleSignOut = () => {
-    console.log("Sign Out");
-    console.log(user);
     signOut(auth);
   };
 
@@ -58,13 +56,39 @@ const UserMenu = () => {
                 <Menu.Item>
                   {({ active }) => (
                     <Link
-                      to="/manage"
+                      to="/manageinventory"
                       className={classNames(
                         active ? "bg-gray-100 text-gray-900" : "text-gray-700",
                         "block px-4 py-2 text-sm"
                       )}
                     >
                       Manage Items
+                    </Link>
+                  )}
+                </Menu.Item>
+                <Menu.Item>
+                  {({ active }) => (
+                    <Link
+                      to="/addnew"
+                      className={classNames(
+                        active ? "bg-gray-100 text-gray-900" : "text-gray-700",
+                        "block px-4 py-2 text-sm"
+                      )}
+                    >
+                      Add Item
+                    </Link>
+                  )}
+                </Menu.Item>
+                <Menu.Item>
+                  {({ active }) => (
+                    <Link
+                      to="/manageinventory"
+                      className={classNames(
+                        active ? "bg-gray-100 text-gray-900" : "text-gray-700",
+                        "block px-4 py-2 text-sm"
+                      )}
+                    >
+                      My items
                     </Link>
                   )}
                 </Menu.Item>

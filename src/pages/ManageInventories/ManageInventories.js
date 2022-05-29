@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "../../components/design/Link/Link";
 import { H1 } from "../../components/design/Title/Title";
 import useInventory from "../../hooks/useInventory";
 
@@ -19,7 +20,10 @@ const ManageInventories = () => {
 
   return (
     <div className="container mx-auto">
-      <H1 className="mt-16">Manage Inventories</H1>
+      <div className="flex justify-between items-end">
+        <H1 className="mt-16">Manage Inventories</H1>
+        <Link className="p-1" to="/addnew" text="add new item" />
+      </div>
 
       <div className="overflow-x-auto w-full">
         <table className="table w-full">

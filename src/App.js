@@ -12,6 +12,7 @@ import PageNotFount from "./pages/PageNotFound/PageNotFount";
 import Register from "./pages/Register/Register";
 import RequireAuth from "./pages/Signin/RequireAuth";
 import Signin from "./pages/Signin/Signin";
+import AddNew from "./pages/AddNew/AddNew";
 
 function App() {
   return (
@@ -38,7 +39,17 @@ function App() {
             </RequireAuth>
           }
         />
+        <Route
+          path="/addnew"
+          element={
+            <RequireAuth>
+              <AddNew></AddNew>
+            </RequireAuth>
+          }
+        />
         <Route path="/signin" element={<Signin></Signin>} />
+        <Route path="/register" element={<Register></Register>} />
+        <Route path="/blogs" element={<Blog></Blog>} />
         <Route path="/register" element={<Register></Register>} />
 
         <Route path="/*" element={<PageNotFount></PageNotFount>} />

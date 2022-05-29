@@ -4,6 +4,7 @@ import {
   useUpdateProfile,
 } from "react-firebase-hooks/auth";
 import { useLocation, useNavigate } from "react-router-dom";
+import { H2 } from "../../components/design/Title/Title";
 import auth from "../../firebase.init";
 
 const Register = () => {
@@ -41,7 +42,7 @@ const Register = () => {
 
   return (
     <div className="container mx-auto">
-      <h2>Please Sign In</h2>
+      <H2>Please Sign In</H2>
       <form onSubmit={handleRegister} className="w-1/2 mx-auto">
         <input
           onBlur={(e) => setuserName(e.target.value)}
